@@ -33,7 +33,7 @@ Existen dos estrategias de branching:
 ## Trabajar con Git Flow
 1. Se ejecutan los pasos anteriores (Inicialización del repositorio).
 2. Va a crear la rama develop: `git checkout -b develop`
-3. Agregar unos cambios mínimos
+3. Añadir unos cambios mínimos
 4. Desde la rama develop se ejecutan los pasos de Subir cambios a un repositorio.
 5. Ir al repositorio remoto en GitHub, dándo click sobre el botón compare & pull Request
 6. Generamos el pull Request
