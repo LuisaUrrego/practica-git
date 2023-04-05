@@ -12,8 +12,23 @@
   <body>
     <header>
       <nav class="inicio">
-        <img src="/imgs/pokebola.png" class="pokeprincipal" />
+        <img src="/img/pokebola.png" class="pokeprincipal" />
         <a>POKEDEX</a>
+        <div class="search-container">
+          <form action="">
+              <input type="text" placeholder="Buscar">
+          </form>
+        </div>
+        <div id="pokemon-details-container">
+          <img id="pokemon-image" src="">
+          <h2 id="pokemon-name"></h2>
+          <p id="pokemon-type"></p>
+          <p id="pokemon-abilities"></p>
+        </div>
+      
+        <div id="pokemon-list-container">
+          <ul id="pokemon-list"></ul>
+        </div>
       </nav>
     </header>
     <main>
