@@ -20,23 +20,28 @@ th {
 .pokeprincipal{
   height: 40px;
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 20px;
   display: flex;
   float: left;
   overflow: visible;
+  margin: 5px;
+  position: relative;
+  
 }
 
 .inicio{
-  background-color: #5b2584;
+  background-color: #9353c5d5;
   overflow: hidden;
+  height: 60px;
 }
 
 .inicio a {
   float: left;
   color: white;
   text-align: center;
-  padding: 15px 10px;
+  padding: 10px 10px;
   font-family: "Josefin Sans", sans-serif;
+  padding-top: 20px;
 }
 
 .pokemon {
@@ -60,13 +65,13 @@ th {
 }
 
 .pokegif {
-  width: 450px;
+  width: 470px;
   height: auto;
   left: 20px;
   margin-left: auto;
   margin-right: auto;
   image-rendering: pixelated;
-  margin-top: -35px;
+  margin-top: -10px;
   position: relative;
 
 }
@@ -76,9 +81,9 @@ th {
   margin-right: 100px;
   margin-top: 20px;
   width: 450px;
-  height: 520px;
+  height: 440px;
   padding: 20px;
-  background-color: white;
+  background-color: rgb(230, 219, 219);
   border-radius: 10px;
 }
 
@@ -109,7 +114,7 @@ th {
   bottom: 0;
   height: 100px;
   width: 100%;
-  background-color: #5b2584;
+  background-color: #9353c5d5;
   text-align: center;
   float: left;
   display: flex;
@@ -162,6 +167,47 @@ th {
 .lp ul {
   padding-top: 15px;
 }
+
+.search-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.search-container form {
+  position: relative;
+  width: 50%;
+}
+
+.search-container input {
+  height: 35px;
+  border-radius: 16px;
+  display: flex;
+  margin-left: -2px;
+  align-items: center;
+  width: 100%;
+  background-color: #121212;
+  border: 1px solid rgba(255, 255, 255, .1);
+  padding: 12px;
+  color: #8e33aa;
+  font-size: 1rem;
+}
+
+.search {
+  border-radius: 10px;
+  min-width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  background-color: #313131;
+  outline: none;
+  border: none;
+}
+
 
 @media screen and (max-width: 599px) {
   .pokeprincipal{

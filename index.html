@@ -5,14 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" href="imgs/pokebola.png">
     <title>PokeDex</title>
   </head>
   <body>
     <header>
       <nav class="inicio">
-        <img src="/imgs/pokebola.png" class="pokeprincipal" />
+        <img src="/img/pokebola.png" class="pokeprincipal" />
         <a>POKEDEX</a>
+        <div class="search-container">
+          <form action="">
+              <input type="text" placeholder="Buscar">
+          </form>
+        </div>
+        <div id="pokemon-details-container">
+          <img id="pokemon-image" src="">
+          <h2 id="pokemon-name"></h2>
+          <p id="pokemon-type"></p>
+          <p id="pokemon-abilities"></p>
+        </div>
+      
+        <div id="pokemon-list-container">
+          <ul id="pokemon-list"></ul>
+        </div>
       </nav>
     </header>
     <main>
@@ -20,6 +36,7 @@
         <section class="ng">
           <h1>GENGAR</h1>
         </section>
+
         <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif" alt="Gengar" class="pokegif" />
       </section>
       <aside class="tabla">
@@ -90,5 +107,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="./script/script.js" type="module"></script>
   </body>
 </html>
