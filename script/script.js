@@ -1,4 +1,6 @@
-const URL_POKE = "https://pokeapi.co/api/v2/pokemon";
+
+
+const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0";
 let pokedex = [];
 
 const getPokeApi = async (url) => {
