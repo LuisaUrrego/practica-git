@@ -30,7 +30,8 @@ const getAllInfoPokedex = async(url) => {
                 name: response.data.name,
                 abilities: response.data.abilities.map(item=> item.ability.name),
                 image: response.data.sprites.front_default,
-                height: response.data.height
+                height: response.data.height,
+                
             };
             allInfoPokedex.push(pokemon);   
         }
