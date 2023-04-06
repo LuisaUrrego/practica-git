@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     const allInfo = await getAllInfoPokedex(URL_POKE);
+    console.log(allInfo)
     const numeroPokemon = document.getElementById("numero_pokemon");
     const weightPokemon = document.getElementById("weight_pokemon");
     const heightPokemon = document.getElementById("height_pokemon");
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     tagLevelPokemon.innerHTML= `${infoPokemon[0].version_group_details} `
     tagTypePokemon.innerHTML= `${infoPokemon[0].types}`
     tagAbilitiesPokemon.innerHTML= `${infoPokemon[0].abilities} `
-    tagImagesPokemon.innerHTML= `${infoPokemon[0].image} `
+    tagImagesPokemon.innerHTML= `${infoPokemon[0].front_default} `
 
     }
     printPokemon(numeroPokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, imagen_pokemon);
