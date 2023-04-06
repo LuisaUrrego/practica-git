@@ -58,17 +58,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const levelPokemon = document.getElementById("nivel_pokemon");
     const typePokemon = document.getElementById("tipo_pokemon");
     const habilidad_pokemon = document.getElementById("habilidad_pokemon");
-    const imagen_pokemon = document.getElementById("pokeImagenes");
-    const printPokemon = (tagIdPokemon, infoPokemon, tagHeightPokemon, tagWeightPokemon,tagTypePokemon, tagLevelPokemon, tagAbilitiesPokemon, tagImagesPokemon ) =>{
+    //const imagen_pokemon = document.getElementById("pokeImagenes");
+    const printPokemon = (tagIdPokemon, infoPokemon, tagHeightPokemon, tagWeightPokemon,tagTypePokemon, tagLevelPokemon, tagAbilitiesPokemon, /*tagImagesPokemon*/ ) =>{
     tagIdPokemon.innerHTML= `${infoPokemon[0].id} `
     tagHeightPokemon.innerHTML= `${infoPokemon[0].height} m`
     tagWeightPokemon.innerHTML= `${infoPokemon[0].weight} `
     tagLevelPokemon.innerHTML= `${infoPokemon[0].version_group_details} `
     tagTypePokemon.innerHTML= `${infoPokemon[0].types}`
     tagAbilitiesPokemon.innerHTML= `${infoPokemon[0].abilities} `
-    tagImagesPokemon.innerHTML= `${infoPokemon[0].image} `
+    //tagImagesPokemon.innerHTML= `${infoPokemon[0].image} `
 
     }
-    printPokemon(numeroPokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, imagen_pokemon);
+    printPokemon(numeroPokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, /*imagen_pokemon*/);
 })
 
