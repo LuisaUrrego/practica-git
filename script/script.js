@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     tagLevelPokemon.innerHTML= `${infoPokemon[0].version_group_details} `
     tagTypePokemon.innerHTML= `${infoPokemon[0].types}`
     tagAbilitiesPokemon.innerHTML= `${infoPokemon[0].abilities} `
-    tagImagesPokemon.innerHTML= `${infoPokemon[0].front_default} `
+    tagImagesPokemon.innerHTML= `${infoPokemon[0].image} `
 
     }
     printPokemon(numeroPokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, imagen_pokemon);
