@@ -73,5 +73,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     }
     printPokemon(numeroPokemon, nombrePokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, imagen_pokemon);
-})
+});
+
+
+
+
 
