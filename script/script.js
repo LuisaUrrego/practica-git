@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const typePokemon = document.getElementById("tipo_pokemon");
     const habilidad_pokemon = document.getElementById("habilidad_pokemon");
     //const imagen_pokemon = document.getElementById("pokeImagenes");
-    const printPokemon = (tagIdPokemon,tagNombrePokemon, infoPokemon, tagHeightPokemon, tagWeightPokemon,tagTypePokemon, tagLevelPokemon, tagAbilitiesPokemon, /*tagImagesPokemon*/ ) =>{
+    const printPokemon = (tagIdPokemon,tagNombrePokemon, infoPokemon, tagHeightPokemon, tagWeightPokemon,tagTypePokemon, tagLevelPokemon, tagAbilitiesPokemon, /*tagImagesPokemon*/) =>{
     tagIdPokemon.innerHTML= `${infoPokemon[0].id} `
     tagHeightPokemon.innerHTML= `${infoPokemon[0].height} m`
     tagWeightPokemon.innerHTML= `${infoPokemon[0].weight} `
