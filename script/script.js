@@ -90,10 +90,41 @@ opciones.forEach(pokemon => {
    })
 })
 
+// function buscar (){
+//     const inputBusqueda = document.getElementById ("inputBusqueda");
+//     const resultadosBusqueda = document.querySelector("resultadosBusqueda");
+//     festch('${URL_POKE}  = ${inputBusqueda.value}');
+//     then (responsive => responsive.json());
+//     then (data => {
+//         resultadosBusqueda.innerHTML= "";
+//         data.forEach(resultado => {
+//             resultado.addEventListener('click', function(){
+//             const divResultadosBusqueda = resultado.name;
+//             resultadosBusqueda.appendChild(divResultadosBusqueda)
+//             })     
+//         })
 
+//     })
+// }
 
-
-
-
-
-
+function buscar() {
+    const inputBusqueda = document.getElementById("inputBusqueda");
+    const resultadosBusqueda = document.querySelector(".resultadosBusqueda");
+    const URL_POKE = "https://pokeapi.co/api/v2/pokemon/";
+  
+    fetch(`${URL_POKE}${inputBusqueda.value}`)
+      .then(response => response.json())
+      .then(data => {
+        resultadosBusqueda.innerHTML = "";
+        data.results.forEach(resultado => {
+          const divResultado = document.createElement("div");
+          divResultado.innerHTML = resultado.name;
+          divResultado.addEventListener("click", function() {
+            // do something when the search result is clicked
+          });
+          resultadosBusqueda.appendChild(divResultado);
+          console.log(resultadosBusqueda)
+        });
+      })
+      .catch(error => console.log(error));
+  }
