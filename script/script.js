@@ -1,7 +1,8 @@
 
-let pokedex = [];
-let allInfoPokedex = [];
+ let pokedex = [];
+// let allInfoPokedex = [];
 const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0"
+const DETALLEPOKEMON = "https://pokeapi.co/api/v2/pokemon/"
 
 
 
@@ -9,56 +10,63 @@ const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0"
 const getPokeApi = async (url) => {
     try {
         const { data } = await axios.get(url);
-        return data.results;
+        return data;
 
     } catch (error) {
         console.log(error);
-        alert('Usuario, ocurrio un error');
-        return [];
+        if (error.response.status == 404 ) {
+            alert ("Pokemon no encontrado, verifica si el nombre es correcto")
+        }
+        else{
+            alert('Usuario, ocurrio un error');
+            return [];
+        }
+
+        
 
     }
 };
 
 
 
-const getAllInfoPokedex = async(url) => {
-    const allInfoPokedex = []
-    try {
-        const { data } = await axios.get(url); 
-        //console.log(data.results)
-        for (const pokedex of data.results) {
-            const urlPokedex = pokedex.url;
-            const response = await axios.get(urlPokedex);
-            //console.log(response)
-            const pokemon = {
-                id: response.data.id,
-                name: response.data.name,
-                abilities: response.data.abilities[0].ability.name,
-                image: response.data.sprites.front_default,
-                height: response.data.height,
-                weight: response.data.weight,
-                types: response.data.types.type,
-                version_group_details:response.data.level_learned_at
-            };
-            allInfoPokedex.push(pokemon);  
+// // const getAllInfoPokedex = async(url) => {
+//     const allInfoPokedex = []
+//     try {
+//         const { data } = await axios.get(url); 
+//         //console.log(data.results)
+//         for (const pokedex of data.results) {
+//             const urlPokedex = pokedex.url;
+//             const response = await axios.get(urlPokedex);
+//             //console.log(response)
+//             const pokemon = {
+//                 id: response.data.id,
+//                 name: response.data.name,
+//                 abilities: response.data.abilities[0].ability.name,
+//                 image: response.data.sprites.front_default,
+//                 height: response.data.height,
+//                 weight: response.data.weight,
+//                 types: response.data.types.type,
+//                 version_group_details:response.data.level_learned_at
+//             };
+//             allInfoPokedex.push(pokemon);  
             
-        }
-        return allInfoPokedex;
-    } catch (error) {
-        console.log(error);
-        return []
+//         }
+//         return allInfoPokedex;
+//     } catch (error) {
+//         console.log(error);
+//         return []
         
-    }
-}
+//     }
+// }
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-    pokedex = await getPokeApi(URL_POKE);
-    //console.log(pokedex)
+    const response = await getPokeApi(URL_POKE);
+    pokedex = response.results
     
 
-    const allInfo = await getAllInfoPokedex(URL_POKE);
-    console.log(allInfo)
+//  const allInfo = await getAllInfoPokedex(URL_POKE);
+//   console.log(allInfo)
    
     const numeroPokemon = document.getElementById("numero_pokemon");
     const nombrePokemon = document.getElementById("nombre");
@@ -80,12 +88,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     tagImagesPokemon.src= `${infoPokemon[0].image} `
     tagNombrePokemon.innerHTML= `${infoPokemon[0].name} `
    
-
     }
     printPokemon(numeroPokemon, nombrePokemon, allInfo, heightPokemon, weightPokemon, typePokemon, levelPokemon, habilidad_pokemon, imagen_pokemon) 
-        
-
-    
+       
 })
 
 const imagenPoke = document.getElementById("pokeImagenes");
@@ -118,5 +123,25 @@ opciones.forEach((pokemon) => {
     });
   });
 });
+
+form.addEventListener ('submit', async (e) => {
+    e.preventDefault ();
+    const busqueda = inputBusqueda.value
+    if (busqueda && busqueda !== '') {
+       const result = await getPokeApi (DETALLEPOKEMON + busqueda )
+        // busqueda.value = ''
+      printPokemon(result.id, result.name, result.height, result.weight, result.type, result.version_group_details,result.abilities, result.image )
+        console.log(result)
+        
+    }
+    else {
+        window.location.reload()
+
+    }
+    console.log(busqueda)
+}) 
+
+
+
 
 
