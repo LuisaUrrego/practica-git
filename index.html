@@ -16,7 +16,11 @@
         <a>POKEDEX</a>
         <div class="search-container">
           <form action="">
-              <input type="text" placeholder="Buscar">
+              <input id="inputBusqueda" class= "resultadosBusqueda" type="text" placeholder="Buscar">
+              <div>
+                <button class="boton_buscar" id="buscar_pokemon">Buscar</button>
+              </div>
+              
           </form>
         </div>
         <div id="pokemon-details-container">
@@ -34,10 +38,10 @@
     <main>
       <section class="pokemon">
         <section class="ng">
-          <h1>GENGAR</h1>
+          <h1 id="nombre"></h1>
         </section >
 
-        <img id="pokeImagenes" alt="Gengar" class="pokegif" />
+        <img src="" id="pokeImagenes" alt="Gengar" class="pokegif" />
       </section>
       <aside class="tabla">
         <table class="datos">
@@ -46,24 +50,24 @@
             <th>LEVEL</th>
           </tr>
           <tr>
-            <td id="numero_pokemon" ></td>
-            <td id="nivel_pokemon"></td>
+            <td id="numero_pokemon" class="caracteristicas active1" ></td>
+            <td id="nivel_pokemon" class="caracteristicas"></td>
           </tr>
           <tr>
             <th>TYPE</th>
             <th>HABILITY</th>
           </tr>
           <tr>
-            <td id="tipo_pokemon"></td>
-            <td id="habilidad_pokemon"></td>
+            <td id="tipo_pokemon"  class="caracteristicas"></td>
+            <td id="habilidad_pokemon"  class="caracteristicas"></td>
           </tr>
           <tr>
             <th>HEIGHT</th>
             <th>WEIGHT</th>
           </tr>
           <tr>
-            <td id="height_pokemon"></td>
-            <td id="weight_pokemon"></td>
+            <td id="height_pokemon"  class="caracteristicas"></td>
+            <td id="weight_pokemon"  class="caracteristicas"></td>
           </tr>
         </table>
       </aside>
@@ -76,7 +80,8 @@
             <a href="#">
               <img
                 src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif"
-                alt="4"
+                 alt="4" class= "opciones"
+                 
               />
             </a>
           </li>
@@ -84,7 +89,7 @@
             <a href="#">
               <img
                 src="https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur-f.gif"
-                alt="3"
+                 alt="3" class= "opciones"
               />
             </a>
           </li>
@@ -92,7 +97,7 @@
             <a href="#">
               <img
                 src="https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif"
-                alt="2"
+                 alt="2" class= "opciones"
               />
             </a>
           </li>
@@ -100,7 +105,7 @@
             <a href="#">
               <img
                 src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
-                alt="1"
+                 alt="1" class= "opciones active"
               />
             </a>
           </li>
